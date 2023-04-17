@@ -1,0 +1,330 @@
+<%- include('../header.ejs') %>
+<h1 style="text-align: center;">Modifier un étudiant!</h1>
+
+<div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+
+  <div class="d-flex flex-column flex-column-fluid">
+
+    <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+
+      <div
+        id="kt_app_toolbar_container"
+        class="app-container container-fluid d-flex flex-stack"
+      ></div>
+
+    </div>
+
+    <div id="kt_app_content" class="app-content flex-column-fluid">
+
+      <div id="kt_app_content_container" class="app-container container-xxl">
+   
+        <div class="row g-7">
+     
+          <div class="col-xl-12">
+        
+            <div class="card card-flush h-lg-100" id="kt_contacts_main">
+       
+              <div class="card-header pt-7" id="kt_chat_contacts_header">
+         
+              </div>
+           
+              <div class="card-body pt-5">
+            
+                <form
+                  class="form fv-plugins-bootstrap5 fv-plugins-framework"
+                  method="post"
+                  action="/edit"
+                  id="form"
+                  enctype="multipart/form-data"
+                >
+                  <div class="mb-7">
+            
+                    <label class="fs-6 fw-semibold mb-3">
+                      <span>Image</span>
+                      <i
+                        class="fas fa-exclamation-circle ms-1 fs-7"
+                        data-bs-toggle="tooltip"
+                        aria-label="Allowed file types: png, jpg, jpeg."
+                        data-kt-initialized="1"
+                      ></i>
+                    </label>
+             
+                    <div class="mt-1">
+                
+                      <style>
+                        .image-input-placeholder {
+                          background-image: url("../../assets/media/svg/files/blank-image.svg");
+                        }
+                        [data-theme="dark"] .image-input-placeholder {
+                          background-image: url("../../assets/media/svg/files/blank-image-dark.svg");
+                        }
+                      </style>
+                   
+                      <div
+                        class="image-input image-input-outline image-input-placeholder image-input-empty image-input-empty"
+                        data-kt-image-input="true"
+                      >
+                   
+                        <div
+                          class="image-input-wrapper w-100px h-100px"
+                          style="
+                            background-image: url('');
+                          "
+                        ></div>
+                   
+                        <label
+                          class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                          data-kt-image-input-action="change"
+                          data-bs-toggle="tooltip"
+                          aria-label="Change avatar"
+                          data-kt-initialized="1"
+                        >
+                          <i class="bi bi-pencil-fill fs-7"></i>
+                  
+                          <input
+                            type="file"
+                            name="image"
+                            accept=".png, .jpg, .jpeg"
+                          />
+                          <input type="hidden" name="avatar_remove" />
+                
+                        </label>
+                    
+                        <span
+                          class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                          data-kt-image-input-action="cancel"
+                          data-bs-toggle="tooltip"
+                          aria-label="Cancel avatar"
+                          data-kt-initialized="1"
+                        >
+                          <i class="bi bi-x fs-2"></i>
+                        </span>
+                 
+                        <span
+                          class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                          data-kt-image-input-action="remove"
+                          data-bs-toggle="tooltip"
+                          aria-label="Remove avatar"
+                          data-kt-initialized="1"
+                        >
+                          <i class="bi bi-x fs-2"></i>
+                        </span>
+                  
+                      </div>
+               
+                    </div>
+           
+                  </div>
+             
+                  <div
+                    class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2"
+                  >
+               
+                    <div class="col">
+                    
+                      <div class="fv-row mb-7 fv-plugins-icon-container">
+                       <input
+                        type="hidden"
+                        class="form-control form-control-solid"
+                        name="_id"
+                        value="<%- id %>"
+                      />
+                        <label class="fs-6 fw-semibold form-label mt-3">
+                          <span class="">nom</span>
+                        </label>
+                      
+                        <input
+                          type="text"
+                          class="form-control form-control-solid"
+                          name="nom"
+                          value="<%- data.nom %>"
+                        />
+                    
+                        <div
+                          class="fv-plugins-message-container invalid-feedback"
+                        ></div>
+                      </div>
+                
+                    </div>
+                    <div class="col">
+                    
+                      <div class="col">
+                    
+                        <div class="fv-row mb-7 fv-plugins-icon-container">
+                    
+                          <label class="fs-6 fw-semibold form-label mt-3">
+                            <span class="">prenom</span>
+                          </label>
+                        
+                          <input
+                            type="text"
+                            class="form-control form-control-solid"
+                            name="prenom"
+                            value="<%- data.prenom %>"
+                          />
+                      
+                          <div
+                            class="fv-plugins-message-container invalid-feedback"
+                          ></div>
+                        </div>
+                  
+                      </div>
+                
+                    </div>
+                  
+                    <div class="col">
+                 
+                      <div class="fv-row mb-7">
+                  
+                        <label class="fs-6 fw-semibold form-label mt-3">
+                          <span>cin</span>
+                        </label>
+                  
+                        <input
+                          type="number"
+                          class="form-control form-control-solid"
+                          name="cin"
+                          value="<%- data.cin %>"
+                        />
+                  
+                      </div>
+               
+                    </div>
+                    <div class="col">
+                    
+                      <div class="fv-row mb-7 fv-plugins-icon-container">
+                  
+                        <label class="fs-6 fw-semibold form-label mt-3">
+                          <span class="">email</span>
+                        </label>
+                      
+                        <input
+                          type="text"
+                          class="form-control form-control-solid"
+                          name="email"
+                          value="<%- data.email %>"
+                        />
+                    
+                        <div
+                          class="fv-plugins-message-container invalid-feedback"
+                        ></div>
+                      </div>
+                
+                    </div>
+             
+                  </div>
+            
+                  <div
+                    class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2"
+                  >
+              
+                    <div class="col">
+              
+                      <div class="fv-row mb-7">
+             
+                        <label class="fs-6 fw-semibold form-label mt-3">
+                          <span>desc</span>
+                        </label>
+                
+                        <textarea
+                          class="form-control form-control-solid"
+                          name="desc"
+                         
+                        ></textarea
+                        >
+                
+                      </div>
+                
+                    </div>
+                    <div class="col">
+              
+                      <div class="fv-row mb-7">
+             
+                        <label class="fs-6 fw-semibold form-label mt-3">
+                          <span>date de naissance</span>
+                        </label>
+                
+                        <input type="date" name="datebirth" value="<%- moment(data.datebirth).format('YYYY-MM-DD') %>" />
+                
+                      </div>
+                
+                    </div>
+
+                    <div class="col">
+                      <!--begin::Input group-->
+                      <div class="fv-row mb-7">
+                        <!--begin::Label-->
+                        <label class="fs-6 fw-semibold form-label mt-3">
+                          <span>Classe</span>
+                        </label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <select
+                          name="classe_id"
+                          data-control="select3"
+                          data-hide-search="true"
+                        
+
+                       
+                          class=" form-select form-select-solid form-select-sm"
+                         
+                        >
+                          <% classes.forEach(function(classe) { %>
+                          <option
+                            value="<%= typeof classe._id !== 'undefined' ? classe._id : '' %>"
+                          >
+                            <%= classe.name %>
+                          </option>
+                          <% }) %>
+                        </select>
+
+                        <!--end::Input-->
+                      </div>
+                      <!--end::Input group-->
+                    </div>
+                    
+                  </div>
+                  
+          
+                  <div
+                    class="row row-cols-1 row-cols-sm-2 rol-cols-md-1 row-cols-lg-2"
+                  >
+                  </div>
+                
+                  <div class="separator mb-6"></div>
+                 
+                  <div class="d-flex justify-content-end">
+                    
+                    <button
+                      type="submit"
+                      data-kt-contacts-type="submit"
+                      class="btn btn-primary"
+                    >
+                      <span class="indicator-label">modifier</span>
+                    </button>
+                  
+                  </div>
+             
+                </form>
+          
+              </div>
+          
+            </div>
+         
+          </div>
+         
+        </div>
+    
+      </div>
+  
+    </div>
+
+  </div>
+
+</div>
+<!--end:::Main-->
+<%- include('../footer.ejs') %>
+
+
+
+

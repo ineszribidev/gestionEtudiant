@@ -1,0 +1,29 @@
+* {
+    margin:0;
+    padding:0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow',Arial,sans-serif;
+    font-size: 14px;
+}
+h1{
+    font-size: 4rem;
+}
+
+img{
+    /* width: 800px; */
+    text-align:center
+}
+.iimg{
+     width: 300px; 
+     text-align:center;
+    height:100px
+}
+.imageuploaded{
+    width: 400px; 
+    height: 200px;
+    
+}
+/* .form-select {
+    height: 300px;
+    width: 400px;
+    background-color: black;
+  } */
